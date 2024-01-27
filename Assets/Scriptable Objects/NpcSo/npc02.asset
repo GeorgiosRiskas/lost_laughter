@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5b87f369aebf04fb5bc6eee15b4060, type: 3}
   m_Name: npc02
   m_EditorClassIdentifier: 
-  dialogue_greeting: Greetings traveler! May your pranks be legendray and your loot
+  dialogue_greeting: Greetings traveler! May your pranks be legendary and your loot
     be funny!
   dialogue_failure_notFunny: Did you find that joke in a treasure chest labeled "Abandoned
     humor"?
