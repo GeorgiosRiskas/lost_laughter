@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class DialogueSystem : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameObject content = default;
+    [SerializeField] private TextMeshProUGUI dialogueText = default;
+
     void Start()
     {
-        
+        EventsManager.OnDialogueStartedEvent += EventsManager_OnDialogueStartedEvent;
+        EventsManager.OnDialogueEndedEvent += EventsManager_OnDialogueEndedEvent;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        EventsManager.OnDialogueStartedEvent -= EventsManager_OnDialogueStartedEvent;
+        EventsManager.OnDialogueEndedEvent -= EventsManager_OnDialogueEndedEvent;
+    }
+
+    private void EventsManager_OnDialogueStartedEvent(string dialogue)
+    {
+        content.SetActive(true);
+        dialogueText.text = dialogue;
+    }
+
+    private void EventsManager_OnDialogueEndedEvent()
+    {
+        content.SetActive(false);
     }
 }
