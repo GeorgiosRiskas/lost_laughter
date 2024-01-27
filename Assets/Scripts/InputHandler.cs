@@ -36,7 +36,7 @@ public class InputHandler : MonoBehaviour
             inputActions = new PlayerControls();
             inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
             inputActions.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
-            inputActions.PlayerMovement.Jump.performed += _ => Jump(); // Handle jump input
+            // No jump-related code in this version
         }
 
         inputActions.Enable();
@@ -59,11 +59,5 @@ public class InputHandler : MonoBehaviour
         moveAmount = Mathf.Clamp01(Mathf.Abs(horizontal) + Mathf.Abs(vertical));
         mouseX = cameraInput.x;
         mouseY = cameraInput.y;
-    }
-
-    private void Jump()
-    {
-        // Implement your jump logic here
-        Debug.Log("Jump!"); // Placeholder for jump action
     }
 }
