@@ -4,5 +4,5 @@ using UnityEngine;
 public class JokeSO : ScriptableObject
 {
     public string JokeId;
-    public string JokeDiscription;
+    public string JokeDescription;
 }

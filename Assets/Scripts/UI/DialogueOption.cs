@@ -13,6 +13,6 @@ public class DialogueOption : MonoBehaviour
     void Start()
     {
         // Use ref.text = jokeSo.jokeDescription;
-        dialogueOptionText.text = jokeSo.JokeDiscription;
+        dialogueOptionText.text = jokeSo.JokeDescription;
     }
 }
