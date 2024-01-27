@@ -10,6 +10,8 @@ public class DialogueSystem : MonoBehaviour
 
     private GameLogicManager gameLogicManager;
 
+    int notFunnyIndex = 0;
+
     void Start()
     {
         gameLogicManager = GameLogicManager.Instance;
@@ -24,14 +26,12 @@ public class DialogueSystem : MonoBehaviour
         EventsManager.OnPlayerRespondedEvent += EventsManager_OnPlayerRespondedEvent;
     }
 
-
-
     private void OnDestroy()
     {
         EventsManager.OnDialogueStartedEvent -= EventsManager_OnDialogueStartedEvent;
         EventsManager.OnDialogueEndedEvent -= EventsManager_OnDialogueEndedEvent;
         EventsManager.OnPlayerRespondedEvent -= EventsManager_OnPlayerRespondedEvent;
-    }
+    }   
 
     private void EventsManager_OnPlayerRespondedEvent(JokeSO joke)
     {
@@ -41,7 +41,9 @@ public class DialogueSystem : MonoBehaviour
         }
         else
         {
-            dialogueText.text = gameLogicManager.activeNpc.npcSo.dialogue_failure_notFunny;
+            dialogueText.text = gameLogicManager.activeNpc.npcSo.dialogue_failure_notFunny[notFunnyIndex];
+            notFunnyIndex++;
+            if (notFunnyIndex > 1) notFunnyIndex = 0;
         }
     }
 

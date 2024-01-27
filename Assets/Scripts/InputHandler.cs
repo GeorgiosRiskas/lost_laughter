@@ -14,18 +14,42 @@ public class InputHandler : MonoBehaviour
     Vector2 movementInput;
     Vector2 cameraInput;
 
+    private bool cameraRotationIsBlocked;
+
     private void Awake()
     {
         cameraHandler = CameraHandler.singleton;
+
+        EventsManager.OnDialogueStartedEvent += EventsManager_OnDialogueStartedEvent;
+        EventsManager.OnDialogueEndedEvent += EventsManager_OnDialogueEndedEvent;
+    }
+
+    private void OnDestroy()
+    {
+        EventsManager.OnDialogueStartedEvent -= EventsManager_OnDialogueStartedEvent;
+        EventsManager.OnDialogueEndedEvent -= EventsManager_OnDialogueEndedEvent;
+    }
+
+    private void EventsManager_OnDialogueStartedEvent(string dialogue, NPC activeNpc)
+    {
+        cameraRotationIsBlocked = true;
+    }
+
+    private void EventsManager_OnDialogueEndedEvent()
+    {
+        cameraRotationIsBlocked = false;
     }
 
     private void FixedUpdate()
     {
         float delta = Time.fixedDeltaTime;
-        if (cameraHandler != null) 
+        if (cameraHandler != null)
         {
             cameraHandler.FollowTarget(delta);
-            cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
+            if (!cameraRotationIsBlocked)
+            {
+                cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
+            }
         }
     }
 
