@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 129384704496948546}
   - component: {fileID: 4382673697250385479}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Laughter_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ MeshRenderer:
   m_GameObject: {fileID: 5446720285301489786}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
   m_MotionVectors: 1
@@ -118,3 +118,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bec00d2973a0644798d745f0132042f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  laughter: {fileID: 11400000, guid: e6b516b55af66a34e99fde16f9349771, type: 2}
