@@ -40,7 +40,7 @@ using UnityEngine;
             moveDirection = cameraObject.forward * inputHandler.vertical;
             moveDirection += cameraObject.right * inputHandler.horizontal;
             moveDirection.Normalize();
-            //moveDirection.y = 0;
+            moveDirection.y = 0;
 
             float speed = movementSpeed;
             moveDirection *= speed;
