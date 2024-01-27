@@ -16,7 +16,7 @@ public class InputHandler : MonoBehaviour
 
     private bool cameraRotationIsBlocked;
 
-    private void Awake()
+    private void Start()
     {
         cameraHandler = CameraHandler.singleton;
 
@@ -43,14 +43,13 @@ public class InputHandler : MonoBehaviour
     private void FixedUpdate()
     {
         float delta = Time.fixedDeltaTime;
-        if (cameraHandler != null)
+
+        cameraHandler.FollowTarget(delta);
+        if (!cameraRotationIsBlocked)
         {
-            cameraHandler.FollowTarget(delta);
-            if (!cameraRotationIsBlocked)
-            {
-                cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
-            }
+            cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
         }
+
     }
 
     public void OnEnable()
