@@ -14,7 +14,7 @@ public class InputHandler : MonoBehaviour
     Vector2 movementInput;
     Vector2 cameraInput;
 
-    private bool cameraCanRotate;
+    private bool cameraRotationIsBlocked;
 
     private void Awake()
     {
@@ -32,12 +32,12 @@ public class InputHandler : MonoBehaviour
 
     private void EventsManager_OnDialogueStartedEvent(string dialogue, NPC activeNpc)
     {
-        cameraCanRotate = false;
+        cameraRotationIsBlocked = true;
     }
 
     private void EventsManager_OnDialogueEndedEvent()
     {
-        cameraCanRotate = true;
+        cameraRotationIsBlocked = false;
     }
 
     private void FixedUpdate()
@@ -46,7 +46,7 @@ public class InputHandler : MonoBehaviour
         if (cameraHandler != null)
         {
             cameraHandler.FollowTarget(delta);
-            if (cameraCanRotate)
+            if (!cameraRotationIsBlocked)
             {
                 cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
             }
