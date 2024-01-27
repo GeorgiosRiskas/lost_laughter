@@ -36,8 +36,6 @@ public class PlayerLocomotion : MonoBehaviour
         animatorHandler.Initialize();
     }
 
-    public float gravity;
-
     public void Update()
     {
         float delta = Time.deltaTime;
