@@ -7,11 +7,14 @@ public class DialogueTrigger : MonoBehaviour
     private bool readyToSpeak;
 
     [SerializeField] private string talkInstruction = default;
+    [SerializeField] private string completedInstruction = default;
 
     PlayerControls inputActions;
+    private GameLogicManager gameLogicManager;
 
     private void Start()
     {
+        gameLogicManager = GameLogicManager.Instance;
         inputActions = new PlayerControls();
         inputActions.PlayerMovement.Talk.performed += Talk_performed;
         inputActions.Enable();
@@ -29,6 +32,12 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if (gameLogicManager.completedNpcList.Contains(parentNpc))
+            {
+                EventsManager.RaiseShowNotification(completedInstruction);
+                return;
+            }
+
             EventsManager.RaiseShowNotification(talkInstruction);
             readyToSpeak = true;
         }

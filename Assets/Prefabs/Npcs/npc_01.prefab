@@ -188,3 +188,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentNpc: {fileID: 4382673697250385479}
   talkInstruction: Press Y to talk
+  completedInstruction: You already made him laugh :) Go forth adventurer and make
+    others laugh
