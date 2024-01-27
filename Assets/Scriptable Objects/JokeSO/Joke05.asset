@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47b35e00243e44ea795889b552bd4e9c, type: 3}
   m_Name: Joke05
   m_EditorClassIdentifier: 
-  JokeId: 
+  JokeId: 05
   JokeDiscription: 

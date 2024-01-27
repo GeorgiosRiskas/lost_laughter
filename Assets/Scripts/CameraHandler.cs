@@ -24,7 +24,18 @@ public class CameraHandler : MonoBehaviour
    private void Awake()
 
    {
-    singleton = this;
+    // Singleton pattern
+        if (singleton == null)
+        {
+            singleton = this;
+        }
+        else
+        {
+            Debug.LogWarning("Duplicate CameraHandler instance detected. Destroying the new one.");
+            Destroy(gameObject);
+            return;
+        }
+
     myTransform = transform;
     defaultPosition = cameraTransform.localPosition.z;
     //Related to camera colliding with enviroment

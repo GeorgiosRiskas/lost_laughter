@@ -132,7 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2840622918515199830}
-  - component: {fileID: 2881078700604674163}
+  - component: {fileID: 7227175696283172340}
   m_Layer: 0
   m_Name: Camera Holder
   m_TagString: Untagged
@@ -157,7 +157,7 @@ Transform:
   - {fileID: 7533257401396078113}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2881078700604674163
+--- !u!114 &7227175696283172340
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -169,9 +169,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccfd20877fd371243893a383b11a87b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTransform: {fileID: 5617008598785989007, guid: 364c2becf2ca31948bc5d5fee8c0e48c, type: 3}
-  cameraTransform: {fileID: 3178144164251635984}
-  cameraPivotTransform: {fileID: 2840622918515199830}
+  targetTransform: {fileID: 0}
+  cameraTransform: {fileID: 7533257401396078113}
+  cameraPivotTransform: {fileID: 3178144164251635984}
   lookSpeed: 0.1
   followSpeed: 0.1
   pivotSpeed: 0.03
