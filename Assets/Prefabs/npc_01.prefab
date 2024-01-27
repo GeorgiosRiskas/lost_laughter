@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 129384704496948546}
   - component: {fileID: 4382673697250385479}
   m_Layer: 0
-  m_Name: Laughter_01
+  m_Name: npc_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

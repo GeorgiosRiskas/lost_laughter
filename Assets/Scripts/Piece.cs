@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Piece : MonoBehaviour
 {
-    public Laughter laughter;
+    public NPC laughter;
 
     private void OnTriggerEnter(Collider other)
     {
