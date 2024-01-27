@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Piece : MonoBehaviour
+public class NPC : MonoBehaviour
 {
-    public NPC laughter;
+    public NpcSO laughter;
 
     private void OnTriggerEnter(Collider other)
     {

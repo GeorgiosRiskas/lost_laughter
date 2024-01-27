@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "npcX", menuName = "Lost Laughter/npc")]
-public class NPC : ScriptableObject
+public class NpcSO : ScriptableObject
 {
     public string laughterId;
 }
