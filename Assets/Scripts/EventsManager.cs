@@ -30,6 +30,13 @@ public class EventsManager
         OnPlayerRespondedEvent?.Invoke(joke);
     }
 
+    public delegate void OnPlayerSucceded(NPC npc);
+    public static event OnPlayerSucceded OnPlayerSuccededEvent;
+    public static void RaiseOnPlayerSuccededEvent(NPC npc)
+    {
+        OnPlayerSuccededEvent?.Invoke(npc);
+    }
+
     public delegate void OnShowNotification(string notification);
     public static event OnShowNotification OnShowNotificationEvent;
     public static void RaiseShowNotification(string notification)
@@ -43,4 +50,6 @@ public class EventsManager
     {
         OnHideNotificationEvent?.Invoke();
     }
+
+
 }

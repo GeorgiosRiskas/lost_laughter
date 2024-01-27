@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueSystem : MonoBehaviour
 {
     [SerializeField] private GameObject content = default;
+    [SerializeField] private GameObject optionsContent = default;
     [SerializeField] private TextMeshProUGUI dialogueText = default;
     [SerializeField] private List<DialogueOption> options = new List<DialogueOption>();
 
@@ -38,6 +39,8 @@ public class DialogueSystem : MonoBehaviour
         if (gameLogicManager.activeNpc.npcSo.correctJoke == joke)
         {
             dialogueText.text = gameLogicManager.activeNpc.npcSo.dialogue_success;
+            EventsManager.RaiseOnPlayerSuccededEvent(gameLogicManager.activeNpc);
+            optionsContent.SetActive(false);
         }
         else
         {
@@ -51,6 +54,7 @@ public class DialogueSystem : MonoBehaviour
     {
         CheckUnlockedJokes();
         content.SetActive(true);
+        optionsContent.SetActive(true);
         dialogueText.text = dialogue;
     }
 

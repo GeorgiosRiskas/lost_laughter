@@ -50,6 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   content: {fileID: 7055859223819642644}
+  optionsContent: {fileID: 1178755526663258524}
   dialogueText: {fileID: 2208728400848415194}
   options: []
 --- !u!1 &1178755526663258524
