@@ -16,6 +16,24 @@ public class InputHandler : MonoBehaviour
 
     private bool cameraRotationIsBlocked;
 
+    public void OnEnable()
+    {
+        if (inputActions == null)
+        {
+            inputActions = new PlayerControls();
+            inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
+            inputActions.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
+            // No jump-related code in this version
+        }
+
+        inputActions.Enable();
+    }
+
+    private void OnDisable()
+    {
+        inputActions.Disable();
+    }
+
     private void Start()
     {
         cameraHandler = CameraHandler.singleton;
@@ -40,34 +58,15 @@ public class InputHandler : MonoBehaviour
         cameraRotationIsBlocked = false;
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
-        float delta = Time.fixedDeltaTime;
+        float delta = Time.deltaTime;
 
         cameraHandler.FollowTarget(delta);
         if (!cameraRotationIsBlocked)
         {
             cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
         }
-
-    }
-
-    public void OnEnable()
-    {
-        if (inputActions == null)
-        {
-            inputActions = new PlayerControls();
-            inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
-            inputActions.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
-            // No jump-related code in this version
-        }
-
-        inputActions.Enable();
-    }
-
-    private void OnDisable()
-    {
-        inputActions.Disable();
     }
 
     public void TickInput(float delta)
