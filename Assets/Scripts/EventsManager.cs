@@ -1,9 +1,16 @@
 public class EventsManager
 {
-    public delegate void OnPieceCollected();
-    public static event OnPieceCollected OnPieceCollectedEvent;
-    public static void RaisePieceCollectedEvent()
+    public delegate void OnJokeCollected(Joke joke);
+    public static event OnJokeCollected OnJokeCollectedEvent;
+    public static void RaiseJokeCollectedEvent(Joke joke)
     {
-        OnPieceCollectedEvent?.Invoke();
+        OnJokeCollectedEvent?.Invoke(joke);
+    }
+
+    public delegate void OnDialogueStarted(string dialogue);
+    public static event OnDialogueStarted OnDialogueStartedEvent;
+    public static void RaiseDialogueStartedEvent(string dialogue)
+    {
+        OnDialogueStartedEvent?.Invoke(dialogue);
     }
 }

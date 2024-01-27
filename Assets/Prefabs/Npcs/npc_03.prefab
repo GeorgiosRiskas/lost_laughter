@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &995181233986395217
+--- !u!1001 &7489371143573436730
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4021956422352501958, guid: 9f84b8d18163cc64e9e04d554c1787ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.641
       objectReference: {fileID: 0}
     - target: {fileID: 4021956422352501958, guid: 9f84b8d18163cc64e9e04d554c1787ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.536
       objectReference: {fileID: 0}
     - target: {fileID: 4021956422352501958, guid: 9f84b8d18163cc64e9e04d554c1787ea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.839
       objectReference: {fileID: 0}
     - target: {fileID: 4021956422352501958, guid: 9f84b8d18163cc64e9e04d554c1787ea, type: 3}
       propertyPath: m_LocalRotation.w
@@ -49,12 +49,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4382673697250385479, guid: 9f84b8d18163cc64e9e04d554c1787ea, type: 3}
+      propertyPath: npcSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d1e2673aeb24497089793e922220968, type: 2}
+    - target: {fileID: 4382673697250385479, guid: 9f84b8d18163cc64e9e04d554c1787ea, type: 3}
       propertyPath: laughter
       value: 
-      objectReference: {fileID: 11400000, guid: d3bc8ce22105b3845a45c523567aac54, type: 2}
+      objectReference: {fileID: 11400000, guid: 9d1e2673aeb24497089793e922220968, type: 2}
     - target: {fileID: 5446720285301489786, guid: 9f84b8d18163cc64e9e04d554c1787ea, type: 3}
       propertyPath: m_Name
-      value: Laughter_02 Variant
+      value: npc_03
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
