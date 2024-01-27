@@ -1,18 +1,46 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private NPC parentNpc = default;
+    private bool readyToSpeak;
+
+    [SerializeField] private string talkInstruction = default;
+
+    PlayerControls inputActions;
+
+    private void Start()
     {
-        
+        inputActions = new PlayerControls();
+        inputActions.PlayerMovement.Talk.performed += Talk_performed;
+        inputActions.Enable();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Talk_performed(InputAction.CallbackContext obj)
     {
-        
+        if (!readyToSpeak)
+            return;
+
+        EventsManager.RaiseDialogueStartedEvent(parentNpc.npcSo.dialogue_greeting);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            EventsManager.RaiseShowNotification(talkInstruction);
+            readyToSpeak = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            EventsManager.RaiseHideNotificationEvent();
+            readyToSpeak = false;
+            EventsManager.RaiseDialogueEndedEvent();
+        }
     }
 }
