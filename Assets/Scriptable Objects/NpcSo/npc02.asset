@@ -14,9 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue_greeting: Greetings traveler! May your pranks be legendary and your loot
     be funny!
-  dialogue_failure_notFunny: Did you find that joke in a treasure chest labeled "Abandoned
-    humor"?
-  dialogue_failure_oldJoke: Did someone cast "Repeat Humor" on you?
-  correctJokeId: 
+  dialogue_success: Hehehe
+  dialogue_failure_notFunny:
+  - 'That humorous attempt is more outdated than yesterday''s royal decree! '
+  - 'Did you find that joke in a treasure chest labeled "Abandoned humor"? '
+  correctJoke: {fileID: 11400000, guid: f83d09c9760c648a4a94b781aadae4eb, type: 2}
   laughterId: 02
   laughterSfx: {fileID: 0}
