@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5b87f369aebf04fb5bc6eee15b4060, type: 3}
   m_Name: npc01
   m_EditorClassIdentifier: 
+  dialogue_greeting: Greetings, loyal subject!
+  dialogue_failure_notFunny: That humorous attempt is more outdated than yesterday's
+    royal decree!
+  dialogue_failure_oldJoke: Aha!! A royal re-run!
+  correctJokeId: 
   laughterId: 01
+  laughterSfx: {fileID: 0}

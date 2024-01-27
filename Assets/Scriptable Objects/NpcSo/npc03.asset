@@ -12,4 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5b87f369aebf04fb5bc6eee15b4060, type: 3}
   m_Name: npc03
   m_EditorClassIdentifier: 
+  dialogue_greeting: Greetings, dazzling comrade! May your day outshine royal galas!
+  dialogue_failure_notFunny: Attempting mirth? My gardener's puns have more bloom!
+  dialogue_failure_oldJoke: "D\xE9j\xE0-haha strikes!"
+  correctJokeId: 
   laughterId: 03
+  laughterSfx: {fileID: 0}
