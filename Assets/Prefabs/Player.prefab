@@ -119,8 +119,7 @@ MonoBehaviour:
   animatorHandler: {fileID: 0}
   normalCamera: {fileID: 0}
   movementSpeed: 5
-  rotationSpeed: 10
-  gravity: -50
+  rotationSpeed: 8
 --- !u!1001 &1655166672960048225
 PrefabInstance:
   m_ObjectHideFlags: 0
