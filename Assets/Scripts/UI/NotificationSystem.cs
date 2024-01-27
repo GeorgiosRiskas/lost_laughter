@@ -30,7 +30,7 @@ public class NotificationSystem : MonoBehaviour
     {
         content.SetActive(false);
     }
-    private void EventsManager_OnDialogueStartedEvent(string dialogue)
+    private void EventsManager_OnDialogueStartedEvent(string dialogue, NPC activeNpc)
     {
         content.SetActive(false);
     }

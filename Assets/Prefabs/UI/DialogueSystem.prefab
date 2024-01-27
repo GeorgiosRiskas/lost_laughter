@@ -51,6 +51,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   content: {fileID: 7055859223819642644}
   dialogueText: {fileID: 2208728400848415194}
+  options: []
 --- !u!1 &1178755526663258524
 GameObject:
   m_ObjectHideFlags: 0
@@ -700,6 +701,10 @@ PrefabInstance:
     - target: {fileID: 7660473383777752856, guid: 48e37402782342246a42020170b6c33a, type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8850915105675454935, guid: 48e37402782342246a42020170b6c33a, type: 3}
+      propertyPath: m_text
+      value: What did Yoda said when he saw himself in 4K? -HMDI?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

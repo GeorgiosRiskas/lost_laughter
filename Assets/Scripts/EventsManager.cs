@@ -1,17 +1,19 @@
+using System.Diagnostics;
+
 public class EventsManager
 {
-    public delegate void OnJokeCollected(Joke joke);
+    public delegate void OnJokeCollected(JokeSO joke);
     public static event OnJokeCollected OnJokeCollectedEvent;
-    public static void RaiseJokeCollectedEvent(Joke joke)
+    public static void RaiseJokeCollectedEvent(JokeSO joke)
     {
         OnJokeCollectedEvent?.Invoke(joke);
     }
 
-    public delegate void OnDialogueStarted(string dialogue);
+    public delegate void OnDialogueStarted(string dialogue, NPC activeNpc);
     public static event OnDialogueStarted OnDialogueStartedEvent;
-    public static void RaiseDialogueStartedEvent(string dialogue)
+    public static void RaiseDialogueStartedEvent(string dialogue, NPC activeNpc)
     {
-        OnDialogueStartedEvent?.Invoke(dialogue);
+        OnDialogueStartedEvent?.Invoke(dialogue, activeNpc);
     }
 
     public delegate void OnDialogueEnded();
@@ -19,6 +21,13 @@ public class EventsManager
     public static void RaiseDialogueEndedEvent()
     {
         OnDialogueEndedEvent?.Invoke();
+    }
+
+    public delegate void OnPlayerResponded(JokeSO joke);
+    public static event OnPlayerResponded OnPlayerRespondedEvent;
+    public static void RaisePlayerRespondedEvent(JokeSO joke)
+    {
+        OnPlayerRespondedEvent?.Invoke(joke);
     }
 
     public delegate void OnShowNotification(string notification);

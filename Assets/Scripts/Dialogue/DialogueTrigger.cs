@@ -22,7 +22,7 @@ public class DialogueTrigger : MonoBehaviour
         if (!readyToSpeak)
             return;
 
-        EventsManager.RaiseDialogueStartedEvent(parentNpc.npcSo.dialogue_greeting);
+        EventsManager.RaiseDialogueStartedEvent(parentNpc.npcSo.dialogue_greeting, parentNpc);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -4,9 +4,10 @@ using UnityEngine;
 public class NpcSO : ScriptableObject
 {
     public string dialogue_greeting;
+    public string dialogue_success;
     public string dialogue_failure_notFunny;
     public string dialogue_failure_oldJoke;
-    public string correctJokeId;
+    public JokeSO correctJoke;
     public string laughterId;
     public AudioClip laughterSfx;
 }

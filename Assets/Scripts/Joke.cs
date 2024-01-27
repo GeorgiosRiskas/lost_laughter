@@ -8,7 +8,8 @@ public class Joke : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            EventsManager.RaiseJokeCollectedEvent(this);
+            EventsManager.RaiseJokeCollectedEvent(jokeSo);
+            gameObject.SetActive(false);
         }
     }
 }
