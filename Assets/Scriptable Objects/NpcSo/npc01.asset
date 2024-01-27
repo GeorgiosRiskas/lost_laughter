@@ -16,7 +16,7 @@ MonoBehaviour:
   dialogue_success: Hahaha
   dialogue_failure_notFunny:
   - 'That humorous attempt is more outdated than yesterday''s royal decree! '
-  - 'Did you find that joke in a treasure chest labeled "Abandoned humor"? '
+  - Your comedic timing is slower than a snail's pace.
   correctJoke: {fileID: 11400000, guid: b77c890571eec487d8e086e4b951d9d9, type: 2}
   laughterId: 01
   laughterSfx: {fileID: 0}
