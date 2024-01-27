@@ -10,8 +10,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4244136620329427791, guid: 9b451bc69beaeff4c96875e44d88ca27, type: 3}
       propertyPath: m_Name
-      value: joke05 Variant
+      value: joke05
       objectReference: {fileID: 0}
+    - target: {fileID: 5365338077892978344, guid: 9b451bc69beaeff4c96875e44d88ca27, type: 3}
+      propertyPath: jokeSo
+      value: 
+      objectReference: {fileID: 11400000, guid: 39005523409a44668b6e38cc86003dab, type: 2}
     - target: {fileID: 8619640077511759804, guid: 9b451bc69beaeff4c96875e44d88ca27, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
