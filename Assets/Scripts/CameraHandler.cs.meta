@@ -3,7 +3,10 @@ guid: ccfd20877fd371243893a383b11a87b4
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - targetTransform: {instanceID: 0}
+  - cameraTransform: {instanceID: 0}
+  - cameraPivotTransform: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
