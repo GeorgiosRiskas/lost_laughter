@@ -48,22 +48,24 @@ public class CameraHandler : MonoBehaviour
     myTransform.position = targetPosition;
    }
 
-   public void HandleCameraRotation(float delta, float mouseXInput, float mouseYInput)
-   {
+  public void HandleCameraRotation(float delta, float mouseXInput, float mouseYInput)
+{
     lookAngle += (mouseXInput * lookSpeed) / delta;
     pivotAngle -= (mouseYInput * pivotSpeed) / delta;
     pivotAngle = Mathf.Clamp(pivotAngle, minimumPivot, maximumPivot);
 
     Vector3 rotation = Vector3.zero;
     rotation.y = lookAngle;
-    Quaternion targetRotation = Quaternion.Euler(rotation);
-    myTransform.rotation = targetRotation;
-
-    rotation = Vector3.zero;
     rotation.x = pivotAngle;
+    Quaternion targetRotation = Quaternion.Euler(rotation);
+    //myTransform.rotation = targetRotation;
 
-    targetRotation = Quaternion.Euler(rotation);
+    //rotation = Vector3.zero;
+    //rotation.x = pivotAngle;
+
+    //targetRotation = Quaternion.Euler(rotation);
     cameraPivotTransform.localRotation = targetRotation;
-   }
+    myTransform.rotation = targetRotation;
+}
 
 }
