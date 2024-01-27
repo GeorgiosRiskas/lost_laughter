@@ -21,12 +21,12 @@ public class InputHandler : MonoBehaviour
 
     private void FixedUpdate()
     {
-       float delta = Time.fixedDeltaTime;
-       if (cameraHandler != null) 
-       {
-        cameraHandler.FollowTarget(delta);
-        cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
-       }
+        float delta = Time.fixedDeltaTime;
+        if (cameraHandler != null) 
+        {
+            cameraHandler.FollowTarget(delta);
+            cameraHandler.HandleCameraRotation(delta, mouseX, mouseY);
+        }
     }
 
     public void OnEnable()
@@ -36,6 +36,7 @@ public class InputHandler : MonoBehaviour
             inputActions = new PlayerControls();
             inputActions.PlayerMovement.Movement.performed += inputActions => movementInput = inputActions.ReadValue<Vector2>();
             inputActions.PlayerMovement.Camera.performed += i => cameraInput = i.ReadValue<Vector2>();
+            inputActions.PlayerMovement.Jump.performed += _ => Jump(); // Handle jump input
         }
 
         inputActions.Enable();
@@ -58,5 +59,11 @@ public class InputHandler : MonoBehaviour
         moveAmount = Mathf.Clamp01(Mathf.Abs(horizontal) + Mathf.Abs(vertical));
         mouseX = cameraInput.x;
         mouseY = cameraInput.y;
+    }
+
+    private void Jump()
+    {
+        // Implement your jump logic here
+        Debug.Log("Jump!"); // Placeholder for jump action
     }
 }

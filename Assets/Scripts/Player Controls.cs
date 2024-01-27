@@ -53,6 +53,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Jump"",
+                    ""type"": ""Value"",
+                    ""id"": ""0bb5c719-4faa-48e8-ad69-1daa6890d506"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -143,6 +152,17 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Talk"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""933b29e6-d9e7-4f02-9f0e-03962e4f2133"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": ""Press(behavior=2)"",
+                    ""processors"": ""Scale"",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -154,6 +174,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_PlayerMovement_Movement = m_PlayerMovement.FindAction("Movement", throwIfNotFound: true);
         m_PlayerMovement_Camera = m_PlayerMovement.FindAction("Camera", throwIfNotFound: true);
         m_PlayerMovement_Talk = m_PlayerMovement.FindAction("Talk", throwIfNotFound: true);
+        m_PlayerMovement_Jump = m_PlayerMovement.FindAction("Jump", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -218,6 +239,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerMovement_Movement;
     private readonly InputAction m_PlayerMovement_Camera;
     private readonly InputAction m_PlayerMovement_Talk;
+    private readonly InputAction m_PlayerMovement_Jump;
     public struct PlayerMovementActions
     {
         private @PlayerControls m_Wrapper;
@@ -225,6 +247,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_PlayerMovement_Movement;
         public InputAction @Camera => m_Wrapper.m_PlayerMovement_Camera;
         public InputAction @Talk => m_Wrapper.m_PlayerMovement_Talk;
+        public InputAction @Jump => m_Wrapper.m_PlayerMovement_Jump;
         public InputActionMap Get() { return m_Wrapper.m_PlayerMovement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -243,6 +266,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Talk.started += instance.OnTalk;
             @Talk.performed += instance.OnTalk;
             @Talk.canceled += instance.OnTalk;
+            @Jump.started += instance.OnJump;
+            @Jump.performed += instance.OnJump;
+            @Jump.canceled += instance.OnJump;
         }
 
         private void UnregisterCallbacks(IPlayerMovementActions instance)
@@ -256,6 +282,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Talk.started -= instance.OnTalk;
             @Talk.performed -= instance.OnTalk;
             @Talk.canceled -= instance.OnTalk;
+            @Jump.started -= instance.OnJump;
+            @Jump.performed -= instance.OnJump;
+            @Jump.canceled -= instance.OnJump;
         }
 
         public void RemoveCallbacks(IPlayerMovementActions instance)
@@ -278,5 +307,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnCamera(InputAction.CallbackContext context);
         void OnTalk(InputAction.CallbackContext context);
+        void OnJump(InputAction.CallbackContext context);
     }
 }

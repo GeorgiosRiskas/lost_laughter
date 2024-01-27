@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5642456624423527216}
   - component: {fileID: 8542941132712102029}
   - component: {fileID: 2185338556568721615}
+  - component: {fileID: -5689945110928531581}
   - component: {fileID: 4057518092527181841}
   m_Layer: 10
   m_Name: Player
@@ -103,6 +104,19 @@ MonoBehaviour:
   moveAmount: 0
   mouseX: 0
   mouseY: 0
+--- !u!114 &-5689945110928531581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5093507042205748491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eecce52a5d8e0e243b91c6fe4b4a64e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpForce: 10
 --- !u!114 &4057518092527181841
 MonoBehaviour:
   m_ObjectHideFlags: 0
