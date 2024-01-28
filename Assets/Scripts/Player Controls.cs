@@ -133,10 +133,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
-                    ""id"": ""dac50100-5782-4c7c-bad3-e8232343ca75"",
+                    ""id"": ""bcc300b5-c4dc-4e53-ab03-c57f3725288d"",
                     ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
-                    ""processors"": ""NormalizeVector2"",
+                    ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Camera"",
                     ""isComposite"": false,
