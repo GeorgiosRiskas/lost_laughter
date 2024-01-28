@@ -8,7 +8,6 @@ public class Joke : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("!!!!!!!!!!!!");
             EventsManager.RaiseJokeCollectedEvent(jokeSo);
             gameObject.SetActive(false);
         }
