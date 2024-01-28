@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameLogicManager : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class GameLogicManager : MonoBehaviour
     public List<JokeSO> jokesList = new List<JokeSO>();
     public NPC activeNpc;
     public List<NPC> completedNpcList = new List<NPC>();
+    public const int npcAmount = 3;
 
     private void Awake()
     {
@@ -32,7 +34,16 @@ public class GameLogicManager : MonoBehaviour
         if (!completedNpcList.Contains(npc))
         {
             completedNpcList.Add(npc);
+            if(completedNpcList.Count == npcAmount)
+            {
+                Invoke(nameof(LoadEndScene), 5);
+            }
         }
+    }
+
+    void LoadEndScene()
+    {
+        SceneManager.LoadScene("End");
     }
 
     private void EventsManager_OnDialogueStartedEvent(string dialogue, NPC _activeNpc)

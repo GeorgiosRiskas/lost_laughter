@@ -13909,53 +13909,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7ebbc36267b7a5a44b1ba05bfdc062ab, type: 3}
---- !u!4 &2840622917145457635
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6446779635048386559}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0.06380372, y: -0, z: -0, w: 0.9979625}
-  m_LocalPosition: {x: 24.64, y: 2.369397, z: 12.242432}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3178144163402378661}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -7.316, y: 0, z: 0}
---- !u!1 &2880678878731561230
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3178144163402378661}
-  m_Layer: 0
-  m_Name: Camera Pivot
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3178144163402378661
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2880678878731561230}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2840622917145457635}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4188140953819301384 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7467200306332192347, guid: dcaf51c92c21343419a1c2fb1f43184b, type: 3}
@@ -14266,42 +14219,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcaf51c92c21343419a1c2fb1f43184b, type: 3}
---- !u!1 &6446779635048386559
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2840622917145457635}
-  - component: {fileID: 7227175697619091777}
-  m_Layer: 0
-  m_Name: Camera Holder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &7227175697619091777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6446779635048386559}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccfd20877fd371243893a383b11a87b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cameraTransform: {fileID: 0}
-  cameraPivotTransform: {fileID: 3178144163402378661}
-  lookSpeed: 0.04
-  followSpeed: 0.1
-  pivotSpeed: 0.03
-  minimumPivot: -35
-  maximumPivot: 35
 --- !u!1001 &7863299214020649196
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14369,6 +14286,5 @@ SceneRoots:
   - {fileID: 1781979373}
   - {fileID: 1378418082}
   - {fileID: 1612413288}
-  - {fileID: 2840622917145457635}
   - {fileID: 727010130}
   - {fileID: 430407591}
