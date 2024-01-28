@@ -289,10 +289,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2365494496056686588}
     m_Modifications:
-    - target: {fileID: 225577316394478735, guid: 01c3e8b6160c86a4c8443551aa2587af, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 238027644573722800, guid: 01c3e8b6160c86a4c8443551aa2587af, type: 3}
       propertyPath: m_Name
       value: NotificationSystem
