@@ -19,4 +19,4 @@ MonoBehaviour:
   - Your comedic timing is slower than a snail's pace.
   correctJoke: {fileID: 11400000, guid: b77c890571eec487d8e086e4b951d9d9, type: 2}
   laughterId: King
-  laughterSfx: {fileID: 0}
+  laughterSfx: {fileID: 8300000, guid: 52bdcb60802ffdc438ec64e7506e19a0, type: 3}

@@ -19,4 +19,4 @@ MonoBehaviour:
   - 'Did you find that joke in a treasure chest labeled "Abandoned humor"? '
   correctJoke: {fileID: 11400000, guid: 941b8e526d38c44ca9c536766182454e, type: 2}
   laughterId: Aristocrat
-  laughterSfx: {fileID: 0}
+  laughterSfx: {fileID: 8300000, guid: 9e12903d4be41584ab295063f6b05573, type: 3}
