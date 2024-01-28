@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
     public Vector3 offset;
     public float smoothSpeed = 0.125f;
     public float rotationSpeed = 5.0f;
@@ -19,6 +19,8 @@ public class CameraFollow : MonoBehaviour
 
         controls.PlayerMovement.Camera.performed += ctx => rotationInput = ctx.ReadValue<Vector2>();
         controls.PlayerMovement.Camera.canceled += ctx => rotationInput = Vector2.zero;
+
+        player = FindAnyObjectByType<PlayerMovement>().transform;
     }
 
     private void OnEnable()
@@ -33,9 +35,12 @@ public class CameraFollow : MonoBehaviour
 
     void Update()
     {
-        yaw += rotationSpeed * rotationInput.x * Time.deltaTime;
-        pitch -= rotationSpeed * rotationInput.y * Time.deltaTime;
-        pitch = Mathf.Clamp(pitch, -35, 35); // Limit the pitch rotation
+        float mouseX = rotationInput.x / Screen.width;
+        float mouseY = rotationInput.y / Screen.height;
+
+        yaw += rotationSpeed * mouseX * Time.deltaTime;
+        pitch -= rotationSpeed * mouseY * Time.deltaTime;
+        pitch = Mathf.Clamp(pitch, -10, 35); // Limit the pitch rotation
     }
 
     void LateUpdate()
