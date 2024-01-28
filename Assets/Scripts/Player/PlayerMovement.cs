@@ -17,8 +17,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveInput;
     private float turnSmoothVelocity;
 
-    [SerializeField] private AnimatorHandler animatorHandler;
-
     private Animator animator;
 
     private void OnEnable()
