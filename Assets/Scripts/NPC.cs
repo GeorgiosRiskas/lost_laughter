@@ -17,7 +17,7 @@ public class NPC : MonoBehaviour
 
     private void EventsManager_OnPlayerSuccededEvent(NPC npc)
     {
-        if(npc == npc.npcSo)
+        if(npc == this)
         {
             audioSource.clip = npcSo.laughterSfx;
             audioSource.Play();
