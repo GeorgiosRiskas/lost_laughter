@@ -18,5 +18,5 @@ MonoBehaviour:
   - Your jest falls flatter than the souffle at the king's fest.
   - 'Did you find that joke in a treasure chest labeled "Abandoned humor"? '
   correctJoke: {fileID: 11400000, guid: 941b8e526d38c44ca9c536766182454e, type: 2}
-  laughterId: 03
+  laughterId: Aristocrat
   laughterSfx: {fileID: 0}

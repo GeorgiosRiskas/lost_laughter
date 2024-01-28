@@ -18,5 +18,5 @@ MonoBehaviour:
   - 'That humorous attempt is more outdated than yesterday''s royal decree! '
   - Your comedic timing is slower than a snail's pace.
   correctJoke: {fileID: 11400000, guid: b77c890571eec487d8e086e4b951d9d9, type: 2}
-  laughterId: 01
+  laughterId: King
   laughterSfx: {fileID: 0}

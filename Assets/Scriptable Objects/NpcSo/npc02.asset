@@ -19,5 +19,5 @@ MonoBehaviour:
   - If laughter were gold, your joke would leave us all in poverty.
   - 'Did you find that joke in a treasure chest labeled "Abandoned humor"? '
   correctJoke: {fileID: 11400000, guid: f83d09c9760c648a4a94b781aadae4eb, type: 2}
-  laughterId: 02
+  laughterId: Ogre
   laughterSfx: {fileID: 0}
