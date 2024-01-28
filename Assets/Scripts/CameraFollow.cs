@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class CameraFollow : MonoBehaviour
 {
@@ -13,6 +12,8 @@ public class CameraFollow : MonoBehaviour
     private float pitch = 0.0f;
     private float yaw = 0.0f;
 
+    private bool cameraCanRotate = true;
+
     private void Awake()
     {
         controls = new PlayerControls();
@@ -23,25 +24,43 @@ public class CameraFollow : MonoBehaviour
         player = FindAnyObjectByType<PlayerMovement>().transform;
     }
 
+    private void EventsManager_OnDialogueEndedEvent()
+    {
+        cameraCanRotate = true;
+    }
+
+    private void EventsManager_OnDialogueStartedEvent(string dialogue, NPC activeNpc)
+    {
+        cameraCanRotate = false;
+    }
+
     private void OnEnable()
     {
         controls.Enable();
+        EventsManager.OnDialogueStartedEvent += EventsManager_OnDialogueStartedEvent;
+        EventsManager.OnDialogueEndedEvent += EventsManager_OnDialogueEndedEvent;
     }
 
     private void OnDisable()
     {
         controls.Disable();
+        EventsManager.OnDialogueStartedEvent -= EventsManager_OnDialogueStartedEvent;
+        EventsManager.OnDialogueEndedEvent -= EventsManager_OnDialogueEndedEvent;
     }
 
     void Update()
     {
-        float mouseX = rotationInput.x / Screen.width;
-        float mouseY = rotationInput.y / Screen.height;
+        if (cameraCanRotate)
+        {
+            float mouseX = rotationInput.x / Screen.width;
+            float mouseY = rotationInput.y / Screen.height;
 
-        yaw += rotationSpeed * mouseX * Time.deltaTime;
-        pitch -= rotationSpeed * mouseY * Time.deltaTime;
-        pitch = Mathf.Clamp(pitch, -10, 35); // Limit the pitch rotation
+            yaw += rotationSpeed * mouseX * Time.deltaTime;
+            pitch -= rotationSpeed * mouseY * Time.deltaTime;
+            pitch = Mathf.Clamp(pitch, -10, 35); // Limit the pitch rotation
+        }
     }
+
 
     void LateUpdate()
     {
@@ -55,5 +74,6 @@ public class CameraFollow : MonoBehaviour
         // Update the position and look at the player
         transform.position = smoothedPosition;
         transform.LookAt(player.position);
+
     }
 }

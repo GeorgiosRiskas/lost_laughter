@@ -34,8 +34,6 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         EventsManager.OnPlayerSuccededEvent += EventsManager_OnPlayerSuccededEvent;
-
-        //StartCoroutine(WaitForStartTrackToEnd());
     }
 
     private void OnDestroy()
@@ -65,16 +63,6 @@ public class AudioManager : MonoBehaviour
             }
         }
     }
-
-    //private IEnumerator WaitForStartTrackToEnd()
-    //{
-    //    yield return new WaitForSeconds(audioSourceStart.clip.length);
-    //    audioSourceStart.Stop();
-    //    audioSourceMain.Play();
-    //    audioSourceAristocrat.Play();
-    //    audioSourceKing.Play();
-    //    audioSourceOgre.Play();
-    //}
 
     private IEnumerator StartMainThemeAfterLaugh(NPC npc)
     {
