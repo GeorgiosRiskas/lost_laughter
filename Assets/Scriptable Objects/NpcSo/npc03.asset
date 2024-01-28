@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5b87f369aebf04fb5bc6eee15b4060, type: 3}
   m_Name: npc03
   m_EditorClassIdentifier: 
-  dialogue_greeting: Greetings, dazzling comrade! May your day outshine royal galas!
-  dialogue_success: Hihihi
+  dialogue_greeting: Oh, everything is so sad. How I wish to laugh again...
+  dialogue_success: Hihihihii! That joke was quite good!
   dialogue_failure_notFunny:
-  - Your jest falls flatter than the souffle at the king's fest.
-  - 'Did you find that joke in a treasure chest labeled "Abandoned humor"? '
+  - Please, stop it friend. Your dreadful jokes sadden me even more.
+  - Was that supposed to be a joke?
   correctJoke: {fileID: 11400000, guid: 941b8e526d38c44ca9c536766182454e, type: 2}
   laughterId: Aristocrat
   laughterSfx: {fileID: 8300000, guid: 9e12903d4be41584ab295063f6b05573, type: 3}
