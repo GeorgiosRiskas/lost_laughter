@@ -3,6 +3,7 @@ using UnityEngine;
 public class NPC : MonoBehaviour
 {
     [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource greetingAudio;
     public NpcSO npcSo;
     private Animator animator;
 
@@ -10,11 +11,21 @@ public class NPC : MonoBehaviour
     {
         animator = GetComponentInChildren<Animator>();
         EventsManager.OnPlayerSuccededEvent += EventsManager_OnPlayerSuccededEvent;
+        EventsManager.OnDialogueStartedEvent += EventsManager_OnDialogueStartedEvent;
     }
 
     private void OnDestroy()
     {
         EventsManager.OnPlayerSuccededEvent -= EventsManager_OnPlayerSuccededEvent;
+        EventsManager.OnDialogueStartedEvent -= EventsManager_OnDialogueStartedEvent;
+    }
+
+    private void EventsManager_OnDialogueStartedEvent(string dialogue, NPC activeNpc)
+    {
+        if (activeNpc == this)
+        {
+            greetingAudio.Play();
+        }
     }
 
     private void EventsManager_OnPlayerSuccededEvent(NPC npc)
