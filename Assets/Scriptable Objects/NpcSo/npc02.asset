@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5b87f369aebf04fb5bc6eee15b4060, type: 3}
   m_Name: npc02
   m_EditorClassIdentifier: 
-  dialogue_greeting: Greetings traveler! May your pranks be legendary and your loot
-    be funny!
-  dialogue_success: Hehehe
+  dialogue_greeting: So sad. Entertain, little human, or I shall eat you!
+  dialogue_success: Har har har haaarr! Funny!
   dialogue_failure_notFunny:
-  - If laughter were gold, your joke would leave us all in poverty.
-  - 'Did you find that joke in a treasure chest labeled "Abandoned humor"? '
+  - These rocks funnier than little human.
+  - Raagh! No more bad jokes, human!
   correctJoke: {fileID: 11400000, guid: f83d09c9760c648a4a94b781aadae4eb, type: 2}
   laughterId: Ogre
   laughterSfx: {fileID: 8300000, guid: c58a991fca4acb34295f0d99cf5a7421, type: 3}
