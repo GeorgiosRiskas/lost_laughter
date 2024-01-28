@@ -58,10 +58,10 @@ public class PlayerLocomotion : MonoBehaviour
         rigidbody.velocity = projectedVelocity;
         animatorHandler.UpdateAnimatorValues(inputHandler.moveAmount, 0);
 
-        if (animatorHandler.canRotate)
-        {
-            HandleRotation(delta);
-        }
+        //if (animatorHandler.canRotate)
+        //{
+        //    HandleRotation(delta);
+        //}
     }
 
 
