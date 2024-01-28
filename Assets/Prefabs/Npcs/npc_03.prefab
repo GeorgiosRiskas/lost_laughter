@@ -988,7 +988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parentNpc: {fileID: 6574681365681268605}
-  talkInstruction: Press Y to talk
+  talkInstruction: Press F to talk
   completedInstruction: You already made him laugh :) Go forth adventurer and make
     others laugh
 --- !u!1 &4599695506497367002
