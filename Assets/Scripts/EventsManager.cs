@@ -23,7 +23,14 @@ public class EventsManager
         OnDialogueEndedEvent?.Invoke();
     }
 
-    public delegate void OnPlayerResponded(JokeSO joke);
+	public delegate void OnDialogueExited();
+	public static event OnDialogueExited OnDialogueExitedEvent;
+	public static void RaiseDialogueExitedEvent()
+	{
+		OnDialogueExitedEvent?.Invoke();
+	}
+
+	public delegate void OnPlayerResponded(JokeSO joke);
     public static event OnPlayerResponded OnPlayerRespondedEvent;
     public static void RaisePlayerRespondedEvent(JokeSO joke)
     {

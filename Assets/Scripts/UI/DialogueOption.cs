@@ -15,4 +15,9 @@ public class DialogueOption : MonoBehaviour
     {
         EventsManager.RaisePlayerRespondedEvent(jokeSo);
     }
+
+    public void ExitDialogue()
+    {
+        EventsManager.RaiseDialogueExitedEvent();
+    }
 }
