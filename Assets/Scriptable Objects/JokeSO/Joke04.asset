@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Joke04
   m_EditorClassIdentifier: 
   JokeId: 04
-  JokeDescription: I'll get back to you once I know some good joke.
+  JokeDescription: I'll get back when I know more jokes
+  JokeComment: 

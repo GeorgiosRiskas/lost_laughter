@@ -57,6 +57,4 @@ public class EventsManager
     {
         OnHideNotificationEvent?.Invoke();
     }
-
-
 }

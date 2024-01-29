@@ -21,6 +21,7 @@ namespace Invector.vCharacterController
 		[HideInInspector] public vThirdPersonCamera tpCamera;
 		[HideInInspector] public Camera cameraMain;
 		private bool canControlCamera = true;
+		private bool playerInputIsActive = true;
 
 		#endregion
 
@@ -28,7 +29,7 @@ namespace Invector.vCharacterController
 		{
 			EventsManager.OnDialogueStartedEvent += EventsManager_OnDialogueStartedEvent;
 			EventsManager.OnDialogueEndedEvent += EventsManager_OnDialogueEndedEvent;
-		}
+		}	
 
 		private void OnDisable()
 		{
@@ -96,11 +97,10 @@ namespace Invector.vCharacterController
 		}
 
 		protected virtual void InputHandle()
-		{
+		{		
+
 			MoveInput();
 			CameraInput();
-			//SprintInput();
-			//StrafeInput();
 			JumpInput();
 		}
 
@@ -137,27 +137,13 @@ namespace Invector.vCharacterController
 				tpCamera.RotateCamera(X, Y);
 		}
 
-		//protected virtual void StrafeInput()
-		//{
-		//    if (Input.GetKeyDown(strafeInput))
-		//        cc.Strafe();
-		//}
-
-		//protected virtual void SprintInput()
-		//{
-		//    if (Input.GetKeyDown(sprintInput))
-		//        cc.Sprint(true);
-		//    else if (Input.GetKeyUp(sprintInput))
-		//        cc.Sprint(false);
-		//}
-
 		/// <summary>
 		/// Conditions to trigger the Jump animation & behavior
 		/// </summary>
 		/// <returns></returns>
 		protected virtual bool JumpConditions()
 		{
-			return cc.isGrounded && cc.GroundAngle() < cc.slopeLimit && !cc.isJumping && !cc.stopMove;
+			return cc.isGrounded && cc.GroundAngle() < cc.slopeLimit && !cc.isJumping /*&& !cc.stopMove*/;
 		}
 
 		/// <summary>
