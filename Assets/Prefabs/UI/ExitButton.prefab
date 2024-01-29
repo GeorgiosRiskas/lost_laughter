@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6437762027010890016}
   - component: {fileID: 6839825833316977176}
   - component: {fileID: 2731222368582729539}
+  - component: {fileID: 6590982717224003311}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -143,5 +144,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cacd828a7810cc44bdac58e91c53899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6590982717224003311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8694804691208862509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd7b8fbb3db3279489a0c91e2cb0659a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

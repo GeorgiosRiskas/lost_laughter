@@ -13,7 +13,6 @@ public class RandomizeBooks : MonoBehaviour
 
 	void PickRandomTransforms()
 	{
-		// Check if the list has at least 3 transforms
 		if (booksPositionsList.Count < 3)
 		{
 			Debug.LogError("Not enough transforms in the list.");
@@ -22,18 +21,19 @@ public class RandomizeBooks : MonoBehaviour
 
 		List<Transform> tempTransformsList = new List<Transform>(booksPositionsList);
 
-		for (int i = 0; i < 3; i++)
-		{
-			int randomIndex = Random.Range(0, tempTransformsList.Count);
-			Transform selectedTransform = tempTransformsList[randomIndex];
-			Debug.Log("Selected Transform: " + selectedTransform.name);
-
-			tempTransformsList.RemoveAt(randomIndex);
-		}
-
+		// Shuffle the tempTransformsList to randomize the positions
 		for (int i = 0; i < tempTransformsList.Count; i++)
 		{
-			jokesList[i].transform.position = tempTransformsList[i].transform.position;
+			Transform temp = tempTransformsList[i];
+			int randomIndex = Random.Range(i, tempTransformsList.Count);
+			tempTransformsList[i] = tempTransformsList[randomIndex];
+			tempTransformsList[randomIndex] = temp;
+		}
+
+		// Assign positions from the shuffled list to jokesList
+		for (int i = 0; i < jokesList.Count && i < tempTransformsList.Count; i++)
+		{
+			jokesList[i].transform.position = tempTransformsList[i].position;
 		}
 	}
 }

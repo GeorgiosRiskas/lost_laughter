@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -30,27 +31,28 @@ public class AudioManager : MonoBehaviour
 		}
 	}
 
-	private void Start()
+	private void OnEnable()
 	{
-		gameLogic = GameLogicManager.Instance;
-		EventsManager.OnPlayerSuccededEvent += EventsManager_OnPlayerSuccededEvent;
+		SceneManager.sceneLoaded += SceneManager_sceneLoaded;
 	}
 
-	private void OnDestroy()
+	private void OnDisable()
 	{
 		EventsManager.OnPlayerSuccededEvent -= EventsManager_OnPlayerSuccededEvent;
 	}
 
+	private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
+	{
+		if (arg0.name == "Level")
+		{
+			gameLogic = GameLogicManager.Instance;
+			EventsManager.OnPlayerSuccededEvent += EventsManager_OnPlayerSuccededEvent;
+		}
+	}
+
 	private void EventsManager_OnPlayerSuccededEvent(NPC npc)
 	{
-		//if (firstLaughtHasHappened)
-		//{
-		//	UnmuteNpcLaughterTrack(npc);
-		//}
-		//else
-		//{
-			StartCoroutine(StartThemeAfterLaugh(npc));
-		//}
+		StartCoroutine(StartThemeAfterLaugh(npc));
 	}
 
 	private IEnumerator StartThemeAfterLaugh(NPC npc)
@@ -63,7 +65,6 @@ public class AudioManager : MonoBehaviour
 			yield return WaitForLaughter(npc);
 
 			StartMainAudioSources();
-			//AddLaughterTrack(npc);
 			RememberUnlockedTracks();
 			firstLaughtHasHappened = true;
 		}
@@ -75,7 +76,6 @@ public class AudioManager : MonoBehaviour
 			yield return WaitForLaughter(npc);
 
 			RememberUnlockedTracks();
-			//AddLaughterTrack(npc);
 		}
 	}
 
@@ -127,22 +127,6 @@ public class AudioManager : MonoBehaviour
 			audioSourceOgre.mute = false;
 		}
 	}
-
-	//void AddLaughterTrack(NPC npc)
-	//{
-	//	if (npc.npcSo.laughterId == "Aristocrat")
-	//	{
-	//		audioSourceAristocrat.mute = false;
-	//	}
-	//	else if (npc.npcSo.laughterId == "King")
-	//	{
-	//		audioSourceKing.mute = false;
-	//	}
-	//	else if (npc.npcSo.laughterId == "Ogre")
-	//	{
-	//		audioSourceOgre.mute = false;
-	//	}
-	//}
 
 	void RememberUnlockedTracks()
 	{

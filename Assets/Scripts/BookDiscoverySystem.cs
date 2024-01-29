@@ -24,7 +24,6 @@ public class BookDiscoverySystem : MonoBehaviour
 		content.SetActive(true);
 		titleText.text = joke.JokeComment;
 		jokeText.text = joke.JokeDescription;
-		//EventsManager.RaiseShowBookTextEvent(true);
 	}
 
 	public void ExitBookView()
