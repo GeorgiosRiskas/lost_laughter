@@ -41,6 +41,7 @@ public class DialogueSystem : MonoBehaviour
             dialogueText.text = gameLogicManager.activeNpc.npcSo.dialogue_success;
             EventsManager.RaiseOnPlayerSuccededEvent(gameLogicManager.activeNpc);
             optionsContent.SetActive(false);
+            Invoke(nameof(EndDialogueEvent), 2);
         }
         else
         {
@@ -48,6 +49,11 @@ public class DialogueSystem : MonoBehaviour
             notFunnyIndex++;
             if (notFunnyIndex > 1) notFunnyIndex = 0;
         }
+    }
+
+    void EndDialogueEvent()
+    {
+        EventsManager.RaiseDialogueExitedEvent();
     }
 
     private void EventsManager_OnDialogueStartedEvent(string dialogue, NPC activeNpc)
